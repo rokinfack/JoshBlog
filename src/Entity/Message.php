@@ -29,6 +29,9 @@ class Message
 
     private string $fromNaw;
 
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $imageCover = null;
+
     public function __construct()
     {
         $this->createdAt = new DateTimeImmutable();
@@ -100,6 +103,18 @@ class Message
 
         $this->fromNaw = $fromNow;
         
+        return $this;
+    }
+
+    public function getImageCover(): ?string
+    {
+        return $this->imageCover;
+    }
+
+    public function setImageCover(?string $imageCover): static
+    {
+        $this->imageCover = $imageCover;
+
         return $this;
     }
 }

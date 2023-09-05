@@ -1,5 +1,11 @@
-.custom-margin-left{
+
+.wh{
+    max-width: 100%; 
+    max-height: 200px; 
+}
+.margin-left{
     width: 50%;
     margin-left: 0;
-    border: 10px solid;
+
+
 }

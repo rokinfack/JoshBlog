@@ -22,12 +22,12 @@ class MessageCrudController extends AbstractCrudController
             IdField::new('id')->hideOnForm(),
             TextField::new('title'),
             TextEditorField::new('content'),
-            // ImageField::new('imageMessage')
-            // ->setBasePath('/assets/images/') // Le chemin de base pour afficher les images
-            // ->setUploadDir('public/assets/images/') // Le chemin où les images téléchargées seront stockées
-            // ->setUploadedFileNamePattern('[randomhash].[extension]') // Modèle de nom de fichier pour les images téléchargées
-            // ->setLabel('Image de l\'article') // Étiquette du champ
-            // ->setRequired(false) // Si le champ est requis ou non
+             ImageField::new('imageCover')
+             ->setBasePath('/_assets/images/') 
+             ->setUploadDir('public/_assets/images/') 
+             ->setUploadedFileNamePattern('[randomhash].[extension]')
+             ->setLabel('Image de l\'article') 
+             ->setRequired(false) 
         
         ];
     }
