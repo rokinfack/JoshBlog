@@ -12,8 +12,9 @@
 
 	{% for message in messages|reverse %}
    
-<main class="container-md mt-4 margin-left">
- <div class="list-group">
+<main class="container-sm mt-4 w">
+ <div class="row">
+ <div class="col-9">
     <a href="#" class="list-group-item list-group-item-action">
         <img src="/_assets/images/{{ message.imageCover }}" alt="Image de l'article: {{ message.title }}" class="img-fluid wh">
         <div class="d-flex w-100 justify-content-between">
@@ -22,6 +23,7 @@
         </div>
          <p class="lead">{{ message.content | raw }}</p>
     </a>
+    </div>
 </div>
 
 </main>
