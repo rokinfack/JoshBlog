@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\MessageRepository;
+use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
@@ -25,6 +26,12 @@ class Message
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    public function __construct()
+    {
+        $this->createdAt = new DateTimeImmutable();
+        $this->updatedAt = new DateTimeImmutable();
+        
+    }
     public function getId(): ?int
     {
         return $this->id;
@@ -76,5 +83,10 @@ class Message
         $this->updatedAt = $updatedAt;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->title;
     }
 }
