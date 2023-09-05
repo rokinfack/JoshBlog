@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MessageController extends AbstractController
 {
-    #[Route('/message', name: 'app_message')]
+    #[Route('/', name: 'app_message')]
     public function index(MessageRepository $repoMessage): Response
     {
         $messages = $repoMessage->findAll();

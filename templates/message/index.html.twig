@@ -1,8 +1,36 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello MessageController!{% endblock %}
+{% block title %}Josh Blog  !
+{% endblock %}
+
 
 {% block body %}
-<div >
+
+<div class="text-center"> <!-- Pour centrer le contenu -->
+  <strong class="text-danger">{{ messages|length }} message(s) retrouvé(s)</strong>
 </div>
+
+	{% for message in messages|reverse %}
+   
+<main class="container mt-4">
+    <div class="bg-light p-5 rounded">
+       <div class="article-image h-10 w-full">
+    {# <img src="/assets/images/{{ message.imageMessage }}" alt="Image de l'article: {{ message.title }}" class="img-fluid"> #}
+</div>
+
+        <div class="article-createdAt">
+            {# {{ message.fromNaw }} #}
+        </div>
+        <h1>{{ message.title }}</h1>
+        <p class="lead">{{ message.content | raw }}</p>
+    </div>
+</main>
+
+{% endfor %}
+
+
+
+  
+	
+
 {% endblock %}
