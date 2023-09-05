@@ -2,9 +2,10 @@
 
 namespace App\Entity;
 
-use App\Repository\MessageRepository;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\MessageRepository;
+use EsperoSoft\DateFormat\DateFormat;
 
 #[ORM\Entity(repositoryClass: MessageRepository::class)]
 class Message
@@ -25,6 +26,8 @@ class Message
 
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
+
+    private string $fromNaw;
 
     public function __construct()
     {
@@ -88,5 +91,15 @@ class Message
     public function __toString()
     {
         return $this->title;
+    }
+    public function getFromNaw(): string{
+        
+        return DateFormat::fromNow($this->createdAt);
+    }
+    public function setFromNaw(string $fromNow){
+
+        $this->fromNaw = $fromNow;
+        
+        return $this;
     }
 }

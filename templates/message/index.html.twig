@@ -12,18 +12,29 @@
 
 	{% for message in messages|reverse %}
    
-<main class="container mt-4">
-    <div class="bg-light p-5 rounded">
-       <div class="article-image h-10 w-full">
+<main class="container-md border mt-4 custom-margin-left">
+    {# <div class="bg-light p-5 rounded"> #}
+       {# <div class="article-image h-10 w-full"> #}
     {# <img src="/assets/images/{{ message.imageMessage }}" alt="Image de l'article: {{ message.title }}" class="img-fluid"> #}
-</div>
+{# </div> #}
 
-        <div class="article-createdAt">
+        {# <div class="article-createdAt"> #}
             {# {{ message.fromNaw }} #}
-        </div>
+        {# </div>
         <h1>{{ message.title }}</h1>
         <p class="lead">{{ message.content | raw }}</p>
-    </div>
+    </div> #}
+ <div class="list-group">
+    <a href="#" class="list-group-item list-group-item-action">
+        <img src="chemin/vers/votre/image.jpg" alt="Image de couverture" class="img-cover">
+        <div class="d-flex w-100 justify-content-between">
+            <h1>{{ message.title }}</h1>
+            <small>{{ message.fromNaw }}</small>
+        </div>
+         <p class="lead">{{ message.content | raw }}</p>
+    </a>
+</div>
+
 </main>
 
 {% endfor %}
